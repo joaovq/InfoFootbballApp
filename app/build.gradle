@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'androidx.navigation.safeargs'
 }
 Properties properties = new Properties();
 properties.load(project.rootProject.file("api-key.properties").newDataInputStream())
@@ -57,6 +60,8 @@ def gson_version = "2.10.1"
 def activity_version = "1.7.0"
 def fragment_version = "1.5.6"
 def lifecycle_version = "2.6.1"
+def nav_version = "2.5.3"
+def bom_version = "31.3.0"
 
 dependencies {
     implementation "androidx.core:core-ktx:$ktx_core_version"
@@ -75,4 +80,16 @@ dependencies {
     implementation "androidx.activity:activity-ktx:$activity_version"
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    // Import the Firebase BoM
+    implementation platform("com.google.firebase:firebase-bom:$bom_version")
+    implementation "com.google.firebase:firebase-analytics-ktx"
+    // Add the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
 }
