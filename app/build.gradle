@@ -2,6 +2,9 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
+Properties properties = new Properties();
+properties.load(project.rootProject.file("api-key.properties").newDataInputStream())
+def apiKey = properties.getProperty("API_KEY_FOOTBALL_API")
 
 android {
     namespace 'br.com.joaovitorqueiroz.footballapi'
@@ -21,6 +24,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            buildConfigField("String", "API_KEY_FOOTBALL", apiKey)
         }
     }
     compileOptions {
