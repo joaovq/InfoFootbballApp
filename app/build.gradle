@@ -1,0 +1,65 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'br.com.joaovitorqueiroz.footballapi'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "br.com.joaovitorqueiroz.footballapi"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+def ktx_core_version = "1.9.0"
+def app_compat_version = "1.6.1"
+def material_version = "1.8.0"
+def constraint_layout_version = "2.1.4"
+def junit_version = "4.13.2"
+def ext_junit_version = "1.1.5"
+def expresso_version = "3.5.1"
+def retrofit_version = "2.9.0"
+def gson_version = "2.10.1"
+def activity_version = "1.7.0"
+def fragment_version = "1.5.6"
+def lifecycle_version = "2.6.1"
+
+dependencies {
+    implementation "androidx.core:core-ktx:$ktx_core_version"
+    implementation "androidx.appcompat:appcompat:$app_compat_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+//    Test's
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$ext_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$expresso_version"
+//    Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.google.code.gson:gson:$gson_version"
+//    View Model
+    implementation "androidx.activity:activity-ktx:$activity_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+}
