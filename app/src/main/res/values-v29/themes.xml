@@ -1,5 +1,5 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
     <style name="Theme.FootballApi" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/color_primary_brand</item>
@@ -12,8 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_ball_logo</item>
-        <item name="android:windowSplashScreenBackground">@color/color_primary_brand</item>
+        <item name="android:forceDarkAllowed">false</item>
     </style>
     <style name="AppBackground">
         <item name="android:background">@color/color_primary_brand</item>
