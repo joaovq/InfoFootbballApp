@@ -12,6 +12,12 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:enforceStatusBarContrast" tools:targetApi="q">true</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@drawable/ic_ball_logo</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/color_primary_brand</item>
+        <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">3000</item>
     </style>
     <style name="AppBackground" parent="Theme.MaterialComponents.Light">
         <item name="android:background">@color/color_primary_brand_dark</item>
@@ -34,5 +40,8 @@
     </style>
     <style name="TextFontDefaultSplash">
         <item name="android:fontFamily">@font/road_rage_regular</item>
+    </style>
+    <style name="IconTintTheme">
+        <item name="android:tint">@color/color_secondary_brand_dark</item>
     </style>
 </resources>
