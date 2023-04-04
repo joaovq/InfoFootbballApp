@@ -44,4 +44,12 @@
     <style name="IconTintTheme">
         <item name="android:tint">@color/color_secondary_brand_dark</item>
     </style>
+    <style name="StyleButtonGetStarted">
+        <item name="strokeColor">@color/color_secondary_brand_dark</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:elevation">0dp</item>
+        <item name="backgroundTint">@color/color_primary_brand_dark</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/poppins_family</item>
+    </style>
 </resources>
