@@ -1,7 +1,13 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'androidx.navigation.safeargs'
 }
+Properties properties = new Properties();
+properties.load(project.rootProject.file("api-key.properties").newDataInputStream())
+def apiKey = properties.getProperty("API_KEY_FOOTBALL_API")
 
 android {
     namespace 'br.com.joaovitorqueiroz.footballapi'
@@ -22,6 +28,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug{
+            buildConfigField("String", "API_KEY_FOOTBALL", apiKey)
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -30,11 +39,20 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures{
+        viewBinding true
+        dataBinding true
+    }
+    dataBinding{
+        enabled = true
+    }
 }
 
 def ktx_core_version = "1.9.0"
 def app_compat_version = "1.6.1"
 def material_version = "1.8.0"
+def timber_version = "5.0.1"
+def ok_http_interceptor_version = "4.10.0"
 def constraint_layout_version = "2.1.4"
 def junit_version = "4.13.2"
 def ext_junit_version = "1.1.5"
@@ -44,6 +62,10 @@ def gson_version = "2.10.1"
 def activity_version = "1.7.0"
 def fragment_version = "1.5.6"
 def lifecycle_version = "2.6.1"
+def nav_version = "2.5.3"
+def bom_version = "31.3.0"
+def mockitoVersion = "4.10.0"
+def mockitoKotlinVersion = "4.1.0"
 
 dependencies {
     implementation "androidx.core:core-ktx:$ktx_core_version"
@@ -54,12 +76,30 @@ dependencies {
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test.ext:junit:$ext_junit_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$expresso_version"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion"
 //    Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.google.code.gson:gson:$gson_version"
+    implementation "com.jakewharton.timber:timber:$timber_version"
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:$ok_http_interceptor_version"))
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
 //    View Model
     implementation "androidx.activity:activity-ktx:$activity_version"
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    // Import the Firebase BoM
+    implementation platform("com.google.firebase:firebase-bom:$bom_version")
+    implementation "com.google.firebase:firebase-analytics-ktx"
+    // Add the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
 }

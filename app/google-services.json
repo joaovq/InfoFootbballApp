@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "957805102698",
+    "project_id": "infofootballapp1",
+    "storage_bucket": "infofootballapp1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957805102698:android:075dda9196d66736812c13",
+        "android_client_info": {
+          "package_name": "br.com.joaovitorqueiroz.footballapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957805102698-enjngo7ph3072c8lfchd8kb78530bphg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.joaovitorqueiroz.footballapi",
+            "certificate_hash": "0174ab073c659c4da24988b529045a1a5b58aebc"
+          }
+        },
+        {
+          "client_id": "957805102698-39v07jp1djb5j1t2821g04kkqascfhqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO1WU0RG17XjYf9ksdsuJQp513MMTZuOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957805102698-39v07jp1djb5j1t2821g04kkqascfhqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FootballApi</string>
+    <string name="app_name_info_football">Info Football</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="get_started">GET STARTED</string>
 </resources>
