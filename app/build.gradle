@@ -66,18 +66,23 @@ def nav_version = "2.5.3"
 def bom_version = "31.3.0"
 def mockitoVersion = "4.10.0"
 def mockitoKotlinVersion = "4.1.0"
+def mockkVersion = "1.13.4"
 
 dependencies {
     implementation "androidx.core:core-ktx:$ktx_core_version"
     implementation "androidx.appcompat:appcompat:$app_compat_version"
     implementation "com.google.android.material:material:$material_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+    implementation 'androidx.test.ext:junit-ktx:1.1.5'
 //    Test's
+    androidTestImplementation("androidx.test:core-ktx:1.5.0")
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test.ext:junit:$ext_junit_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$expresso_version"
     testImplementation "org.mockito:mockito-core:$mockitoVersion"
     testImplementation "org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion"
+    debugImplementation("androidx.fragment:fragment-testing:$fragment_version")
+    testImplementation "io.mockk:mockk:$mockkVersion"
 //    Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
@@ -94,6 +99,7 @@ dependencies {
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
     // Import the Firebase BoM
     implementation platform("com.google.firebase:firebase-bom:$bom_version")
     implementation "com.google.firebase:firebase-analytics-ktx"

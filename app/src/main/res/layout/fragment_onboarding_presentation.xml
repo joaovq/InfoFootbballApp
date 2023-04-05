@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.view.OnboardingPresentationFragment">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_item_presentation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollIndicators="none"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_lt_view_pager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tabRippleColor="@null"
+        app:tabIndicatorAnimationMode="fade"
+        app:tabBackground="@drawable/dot_selector"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp"
+        android:layout_marginVertical="@dimen/space_20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_get_started"
+        />
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btn_get_started"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/get_started"
+        android:drawableEnd="@drawable/ic_arrow_button"
+        android:visibility="gone"
+        tools:visibility="visible"
+        style="@style/StyleButtonGetStarted"
+        android:textAppearance="@style/TextBody"
+        android:layout_margin="@dimen/space_20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_next_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        style="@style/StyleButtonGetStarted"
+        android:layout_margin="@dimen/space_20dp"
+        android:visibility="visible"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_arrow_button"
+        android:layout_height="wrap_content"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:contentDescription="@null"
+        android:id="@+id/fab_back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:rotation="900"
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:layout_margin="@dimen/space_20dp"
+        style="@style/StyleButtonGetStarted"
+        android:src="@drawable/ic_arrow_button"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

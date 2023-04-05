@@ -44,4 +44,15 @@
     <style name="TextFontDefaultSplash">
         <item name="android:fontFamily">@font/road_rage_regular</item>
     </style>
+    <style name="TextFont">
+        <item name="android:fontFamily">@font/poppins_family</item>
+    </style>
+    <style name="StyleButtonGetStarted">
+        <item name="strokeColor">@color/color_secondary_brand</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:elevation">0dp</item>
+        <item name="backgroundTint">@color/color_primary_brand</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/poppins_family</item>
+    </style>
 </resources>
