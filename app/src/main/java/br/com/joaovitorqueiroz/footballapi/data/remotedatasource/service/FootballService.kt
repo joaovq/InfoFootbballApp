@@ -1,4 +1,4 @@
-package br.com.joaovitorqueiroz.footballapi.domain.remotedatasource.service
+package br.com.joaovitorqueiroz.footballapi.data.remotedatasource.service
 
 import br.com.joaovitorqueiroz.footballapi.ui.matches.data.model.MatchList
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.model.Match

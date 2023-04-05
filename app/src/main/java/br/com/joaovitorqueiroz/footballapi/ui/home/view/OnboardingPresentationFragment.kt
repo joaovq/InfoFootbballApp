@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import br.com.joaovitorqueiroz.footballapi.InfoFootballApplication
+import br.com.joaovitorqueiroz.footballapi.R
 import br.com.joaovitorqueiroz.footballapi.databinding.FragmentOnboardingPresentationBinding
 import br.com.joaovitorqueiroz.footballapi.ui.home.adapter.PresentationAdapter
 import br.com.joaovitorqueiroz.footballapi.ui.home.factory.PresentationFactory
@@ -101,7 +102,7 @@ class OnboardingPresentationFragment : Fragment() {
             val action =
                 OnboardingPresentationFragmentDirections
                     .actionOnboardingPresentationFragmentToHomeFragment()
-            findNavController().navigate(action)
+            findNavController().navigate(R.id.homeFragment)
         }
     }
 }

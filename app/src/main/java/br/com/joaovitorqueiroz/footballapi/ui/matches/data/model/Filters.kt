@@ -6,8 +6,8 @@ import java.util.*
 
 data class Filters(
     @SerializedName("dateFrom")
-    val dateFrom: Timestamp,
+    val dateFrom: Timestamp = Timestamp(0),
     @SerializedName("dateTo")
-    val dateTo: Timestamp,
-    val permission: String,
+    val dateTo: Timestamp = Timestamp(0),
+    val permission: String = "",
 )
