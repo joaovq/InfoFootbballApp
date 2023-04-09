@@ -20,7 +20,7 @@
     <dimen name="text_buttons">14sp</dimen>
 
 <!--    Home Fragment-->
-    <dimen name="title_toolbar_size">32sp</dimen>
+    <dimen name="title_toolbar_size">35sp</dimen>
     <dimen name="bottom_bar_corner_radius">15dp</dimen>
     <dimen name="stroke_bottom_bar_width">1dp</dimen>
 
