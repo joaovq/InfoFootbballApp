@@ -5,6 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import br.com.joaovitorqueiroz.footballapi.R
 import br.com.joaovitorqueiroz.footballapi.databinding.FragmentHomeBinding
 
@@ -23,5 +28,19 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        configNavigationComponent()
+    }
+
+    private fun configNavigationComponent() {
+        val navHostFragment =
+            childFragmentManager.findFragmentById(_binding.containerNavigationMain.id)
+                as NavHostFragment
+        _binding.bottomNavigation.setupWithNavController(navHostFragment.navController)
+        val appBarConfiguration = AppBarConfiguration(navHostFragment.navController.graph)
+        _binding.toolbarHome.root.setupWithNavController(
+            navController = navHostFragment.navController,
+            appBarConfiguration,
+        )
     }
 }
