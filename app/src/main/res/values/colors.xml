@@ -6,4 +6,5 @@
     <color name="color_primary_brand_dark">#000000</color>
     <color name="color_secondary_brand_dark">#FFFFFF</color>
     <color name="color_primary_brand">#FFFFFF</color>
+    <color name="selector_color_bottom_bar">#D4C219</color>
 </resources>

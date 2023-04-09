@@ -47,6 +47,11 @@
     <style name="TextFont">
         <item name="android:fontFamily">@font/poppins_family</item>
     </style>
+    <style name="TextToolbar">
+        <item name="android:textColor">@color/color_secondary_brand</item>
+        <item name="android:textSize">@dimen/title_toolbar_size</item>
+        <item name="android:fontFamily">@font/road_rage_regular</item>
+    </style>
     <style name="StyleButtonGetStarted">
         <item name="strokeColor">@color/color_secondary_brand</item>
         <item name="strokeWidth">1dp</item>
@@ -54,5 +59,14 @@
         <item name="backgroundTint">@color/color_primary_brand</item>
         <item name="android:gravity">center</item>
         <item name="android:fontFamily">@font/poppins_family</item>
+    </style>
+    <style name="BottomBarApp" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:layout_margin">@dimen/space_20dp</item>
+        <item name="android:background">@drawable/bg_bottom_app_bar</item>
+        <item name="android:padding">@dimen/space_8dp</item>
+        <item name="itemIconTint">@drawable/bottom_item_selector</item>
+        <item name="itemIconSize">30dp</item>
+        <item name="itemRippleColor">@null</item>
+        <item name="labelVisibilityMode">unlabeled</item>
     </style>
 </resources>
