@@ -23,6 +23,11 @@
     <dimen name="title_toolbar_size">35sp</dimen>
     <dimen name="bottom_bar_corner_radius">15dp</dimen>
     <dimen name="stroke_bottom_bar_width">1dp</dimen>
+    <dimen name="emblem_size_item_match">50dp</dimen>
+    <dimen name="text_size_score_item_match">50sp</dimen>
+    <dimen name="max_width_text_competition_stage">70dp</dimen>
+    <dimen name="corner_radius_item_match_card">20dp</dimen>
+    <dimen name="size_emblem_competion_matches">50dp</dimen>
 
 
 </resources>

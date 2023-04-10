@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         app:elevation="0dp"
         android:fitsSystemWindows="true"
-        android:paddingHorizontal="@dimen/space_10dp"
+        android:paddingHorizontal="@dimen/space_8dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
         app:layout_scrollFlags="scroll|enterAlwaysCollapsed|enterAlways"
         >
