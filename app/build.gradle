@@ -5,6 +5,7 @@ plugins {
     id 'com.google.firebase.crashlytics'
     id 'androidx.navigation.safeargs'
     id ("com.google.devtools.ksp")
+    id "kotlin-kapt"
     id("com.google.dagger.hilt.android")
 }
 Properties properties = new Properties();
@@ -114,5 +115,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
 //    DI
     implementation("com.google.dagger:hilt-android:2.44")
-    ksp("com.google.dagger:hilt-android-compiler:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
 }
