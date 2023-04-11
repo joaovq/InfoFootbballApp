@@ -7,9 +7,10 @@ data class Match(
     val id: Long,
     val area: Area,
     val competition: Competition,
-    val status: Status,
-    val stage: Stage,
+    val status: Status?,
+    val stage: Stage?,
     val season: Season,
+    val score: Score,
     val group: Group,
     @SerializedName("matchday")
     val matchDay: Int,

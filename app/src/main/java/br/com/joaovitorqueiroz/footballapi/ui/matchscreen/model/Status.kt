@@ -1,3 +1,12 @@
 package br.com.joaovitorqueiroz.footballapi.ui.matchscreen.model
 
-enum class Status { SCHEDULED, LIVE, IN_PLAY, PAUSED, FINISHED, POSTPONED, SUSPENDED, CANCELED }
+enum class Status(val value: String) {
+    SCHEDULED("LIVE"),
+    LIVE("SCHEDULED"),
+    IN_PLAY("IN PLAY"),
+    PAUSED("PAUSED"),
+    FINISHED("FINISHED"),
+    POSTPONED("POSTPONED"),
+    SUSPENDED("SUSPENDED"),
+    CANCELED("CANCELED")
+}
