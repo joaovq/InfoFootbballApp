@@ -7,6 +7,7 @@ import br.com.joaovitorqueiroz.footballapi.domain.usecases.GetAllMatchesUseCaseI
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.FragmentComponent
 import dagger.hilt.android.components.ViewModelComponent
 
 @Module

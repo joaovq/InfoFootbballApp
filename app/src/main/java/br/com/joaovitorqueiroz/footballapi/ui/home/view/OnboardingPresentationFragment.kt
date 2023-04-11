@@ -15,7 +15,9 @@ import br.com.joaovitorqueiroz.footballapi.ui.util.extension.gone
 import br.com.joaovitorqueiroz.footballapi.ui.util.extension.visible
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OnboardingPresentationFragment : Fragment() {
 
     private lateinit var _binding: FragmentOnboardingPresentationBinding

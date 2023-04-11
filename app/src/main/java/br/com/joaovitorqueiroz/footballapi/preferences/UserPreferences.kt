@@ -2,8 +2,12 @@ package br.com.joaovitorqueiroz.footballapi.preferences
 
 import android.content.Context
 import androidx.core.content.edit
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
-class UserPreferences(context: Context) {
+class UserPreferences @Inject constructor(
+    @ApplicationContext context: Context
+) {
 
     private val sharedPreferences =
         context.getSharedPreferences(USER_PREFERENCES_NAME, Context.MODE_PRIVATE)
