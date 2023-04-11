@@ -11,13 +11,14 @@
         <item name="colorOnSecondary">@color/color_secondary_brand</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:enforceStatusBarContrast" tools:targetApi="q">true</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@drawable/ic_ball_logo</item>
         <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/color_primary_brand</item>
         <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">3000</item>
-        <!-- Customize your theme here. -->
+        <item name="background">@color/color_primary_brand</item>
     </style>
     <style name="AppBackground">
         <item name="android:background">@color/color_primary_brand</item>
@@ -41,7 +42,7 @@
         <item name="android:textSize">@dimen/text_medium14sp</item>
         <item name="android:textColor">@color/color_secondary_brand</item>
     </style>
-    <style name="TextFontDefaultSplash">
+    <style name="TextFontRoadRage">
         <item name="android:fontFamily">@font/road_rage_regular</item>
     </style>
     <style name="TextFont">
@@ -68,5 +69,11 @@
         <item name="itemIconSize">30dp</item>
         <item name="itemRippleColor">@null</item>
         <item name="labelVisibilityMode">unlabeled</item>
+    </style>
+    <style name="ItemMatchesStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="android:backgroundTint">@color/color_secondary_brand</item>
+    </style>
+    <style name="TextItemPrimaryColor">
+        <item name="android:textColor">@color/color_primary_brand</item>
     </style>
 </resources>

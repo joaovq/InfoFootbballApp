@@ -7,6 +7,10 @@
     <string name="title_item_menu_news">News</string>
     <string name="title_item_menu_analytics">Analytics</string>
     <string name="title_item_menu_profile">Profile</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+<!--    Matches Screen-->
+    <string name="text_your_matches">YOUR MATCHES</string>
+    <string name="message_success_state_default">Success</string>
+    <string name="message_error_state_default">Error</string>
+    <string name="text_score_item_match">%d X %d</string>
 </resources>

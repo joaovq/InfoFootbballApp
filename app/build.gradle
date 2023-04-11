@@ -4,6 +4,9 @@ plugins {
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
     id 'androidx.navigation.safeargs'
+    id ("com.google.devtools.ksp")
+    id "kotlin-kapt"
+    id("com.google.dagger.hilt.android")
 }
 Properties properties = new Properties();
 properties.load(project.rootProject.file("api-key.properties").newDataInputStream())
@@ -67,6 +70,8 @@ def bom_version = "31.3.0"
 def mockitoVersion = "4.10.0"
 def mockitoKotlinVersion = "4.1.0"
 def mockkVersion = "1.13.4"
+def glide_version = "4.15.0"
+def glide_compiler_version = "4.14.2"
 
 dependencies {
     implementation "androidx.core:core-ktx:$ktx_core_version"
@@ -95,7 +100,10 @@ dependencies {
     implementation "androidx.activity:activity-ktx:$activity_version"
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-
+//    Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    // Skip this if you don't want to use integration libraries or configure Glide.
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_compiler_version"
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
@@ -103,9 +111,9 @@ dependencies {
     // Import the Firebase BoM
     implementation platform("com.google.firebase:firebase-bom:$bom_version")
     implementation "com.google.firebase:firebase-analytics-ktx"
-    // Add the dependencies for the Crashlytics and Analytics libraries
-    // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
-
+//    DI
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
 }

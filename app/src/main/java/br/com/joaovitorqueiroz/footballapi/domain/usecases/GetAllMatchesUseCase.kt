@@ -5,12 +5,13 @@ import br.com.joaovitorqueiroz.footballapi.ui.matches.data.model.MatchList
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 interface GetAllMatchesUseCase {
     suspend operator fun invoke(): MatchList?
 }
 
-class GetAllMatchesUseCaseImpl(
+class GetAllMatchesUseCaseImpl @Inject constructor(
     private val footballRepository: FootballRepository,
     private val dispatcher: CoroutineDispatcher = Dispatchers.Default,
 ) : GetAllMatchesUseCase {

@@ -5,8 +5,10 @@ import br.com.joaovitorqueiroz.footballapi.data.datasource.FootballDatasource
 import br.com.joaovitorqueiroz.footballapi.data.remotedatasource.service.FootballService
 import br.com.joaovitorqueiroz.footballapi.ui.matches.data.model.MatchList
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.model.Match
+import javax.inject.Inject
 
-class RemoteDataSource(private val serviceFootball: FootballService) : FootballDatasource {
+class RemoteDataSource @Inject constructor(private val serviceFootball: FootballService) :
+    FootballDatasource {
     override suspend fun getAll(): MatchList? {
         val matches = serviceFootball.getMatches(API_KEY_FOOTBALL)
         return matches.body()

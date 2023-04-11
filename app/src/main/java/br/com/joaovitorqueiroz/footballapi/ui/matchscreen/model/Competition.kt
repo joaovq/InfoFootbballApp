@@ -2,6 +2,7 @@ package br.com.joaovitorqueiroz.footballapi.ui.matchscreen.model
 
 data class Competition(
     val id: Long,
+    val area: Area?,
     val name: String,
     val code: String,
     val type: String,
