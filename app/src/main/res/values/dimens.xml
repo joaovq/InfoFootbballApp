@@ -30,6 +30,7 @@
     <dimen name="size_emblem_competion_matches">50dp</dimen>
     <dimen name="card_item_space_into">5dp</dimen>
     <dimen name="width_time_match_item">60dp</dimen>
+    <dimen name="max_width_text_short_name">100dp</dimen>
 
 
 </resources>

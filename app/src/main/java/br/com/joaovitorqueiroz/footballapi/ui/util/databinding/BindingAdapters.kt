@@ -7,12 +7,13 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.com.joaovitorqueiroz.footballapi.R
 import br.com.joaovitorqueiroz.footballapi.domain.mapper.toMapperCompetition
-import br.com.joaovitorqueiroz.footballapi.ui.matches.adapter.CompetitionItemAdapter
-import br.com.joaovitorqueiroz.footballapi.ui.matches.adapter.MatchItemAdapter
-import br.com.joaovitorqueiroz.footballapi.ui.matches.data.model.MatchList
-import br.com.joaovitorqueiroz.footballapi.ui.matches.viewmodel.MatchesUIState
-import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.model.Match
-import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.model.Score
+import br.com.joaovitorqueiroz.footballapi.ui.matches.presentation.adapter.CompetitionItemAdapter
+import br.com.joaovitorqueiroz.footballapi.ui.matches.presentation.adapter.MatchItemAdapter
+import br.com.joaovitorqueiroz.footballapi.ui.matches.data.api.MatchList
+import br.com.joaovitorqueiroz.footballapi.ui.matches.presentation.viewmodel.MatchesUIState
+import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.MatchResponse
+import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.Score
+import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.model.Match
 import br.com.joaovitorqueiroz.footballapi.ui.util.extension.loadImage
 import br.com.joaovitorqueiroz.footballapi.ui.util.extension.showProgressDialog
 
@@ -26,7 +27,6 @@ fun bindMatchesList(
         when (safeState) {
             is MatchesUIState.Error -> {
                 customProgress.hide()
-                /* snackbar(message = safeState.message, anchor = R.id.bottom_navigation)*/
                 safeState.exception.printStackTrace()
             }
             MatchesUIState.Loading -> {
@@ -53,15 +53,8 @@ fun loadImage(imageView: AppCompatImageView?, url: String) {
 
 @BindingAdapter("textScore")
 fun bindTextScore(text: TextView, score: Score) {
-    val home: Int?
-    val away: Int?
-    if (score.winner != null) {
-        home = score.fullTime.home
-        away = score.fullTime.away
-    } else {
-        home = score.halfTime.home
-        away = score.halfTime.away
-    }
+    val home: Int? = score.fullTime.home ?: score.halfTime.home
+    val away: Int? = score.fullTime.away ?: score.halfTime.away
     home?.let {
         text.text = text.context.getString(R.string.text_score_item_match, home, away)
     }

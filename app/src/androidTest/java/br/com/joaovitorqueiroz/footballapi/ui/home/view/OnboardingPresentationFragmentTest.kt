@@ -9,6 +9,7 @@ import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import br.com.joaovitorqueiroz.footballapi.R
+import br.com.joaovitorqueiroz.footballapi.ui.home.presentation.view.OnboardingPresentationFragment
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith

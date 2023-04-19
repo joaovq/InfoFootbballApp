@@ -1,6 +1,6 @@
 package br.com.joaovitorqueiroz.footballapi.domain.usecases
 
-import br.com.joaovitorqueiroz.footballapi.ui.matches.data.model.MatchList
+import br.com.joaovitorqueiroz.footballapi.ui.matches.data.api.MatchList
 import io.mockk.coEvery
 import io.mockk.mockk
 import org.junit.Test

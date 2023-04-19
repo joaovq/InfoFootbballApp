@@ -6,13 +6,13 @@
     app:startDestination="@id/matchesFragment">
     <fragment
         android:id="@+id/matchesFragment"
-        android:name="br.com.joaovitorqueiroz.footballapi.ui.matches.view.MatchesFragment"
+        android:name="br.com.joaovitorqueiroz.footballapi.ui.matches.presentation.view.MatchesFragment"
         android:label="@string/app_name_info_football"
         tools:layout="@layout/fragment_matches" />
 
     <fragment
         android:id="@+id/analyticsFragment"
-        android:name="br.com.joaovitorqueiroz.footballapi.ui.analytics.view.AnalyticsFragment"
+        android:name="br.com.joaovitorqueiroz.footballapi.ui.analytics.presentation.view.AnalyticsFragment"
         android:label="@string/title_item_menu_analytics"
         tools:layout="@layout/fragment_analytics" />
     <fragment

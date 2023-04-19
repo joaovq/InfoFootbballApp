@@ -3,7 +3,7 @@
     <data>
         <variable
             name="viewModel"
-            type="br.com.joaovitorqueiroz.footballapi.ui.matches.viewmodel.MatchesViewModel" />
+            type="br.com.joaovitorqueiroz.footballapi.ui.matches.presentation.viewmodel.MatchesViewModel" />
         <variable
             name="dialog"
             type="android.app.Dialog" />

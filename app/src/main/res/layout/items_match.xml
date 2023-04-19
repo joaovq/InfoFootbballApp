@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="match"
-            type="br.com.joaovitorqueiroz.footballapi.ui.matchscreen.model.Match" />
+            type="br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.model.Match" />
     </data>
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         style="@style/ItemMatchesStyle"
         android:layout_marginVertical="@dimen/space_10dp"
         app:cardCornerRadius="@dimen/corner_radius_item_match_card">
@@ -36,18 +36,19 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_name_home_team"
                 style="@style/TextItemPrimaryColor"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_10dp"
+                android:ellipsize="end"
                 android:fontFamily="@font/poppins_family"
                 android:gravity="center"
-                android:maxWidth="@dimen/max_width_text_competition_stage"
-                android:text="@{match.homeTeam.tla}"
-                android:textAppearance="@style/TextBody"
+                android:lines="1"
+                android:maxWidth="@dimen/max_width_text_short_name"
+                android:text="@{match.homeTeam.shortName}"
+                android:textSize="@dimen/text_minicaps"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@id/iv_home_team"
-                app:layout_constraintHorizontal_bias="0.3"
-                app:layout_constraintStart_toStartOf="@id/iv_home_team"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/iv_home_team"
+                app:layout_constraintStart_toStartOf="@+id/iv_home_team"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_team"
                 tools:text="HT" />
 
@@ -55,13 +56,13 @@
                 android:id="@+id/iv_home_team"
                 android:layout_width="@dimen/emblem_size_item_match"
                 android:layout_height="@dimen/emblem_size_item_match"
-                tools:srcCompat="@drawable/ic_profile"
-                app:urlImg="@{match.homeTeam.crest}"
                 android:padding="@dimen/space_8dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_score"
+                app:layout_constraintEnd_toStartOf="@+id/tv_score"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/tv_score"
-                app:layout_constraintEnd_toStartOf="@id/tv_score"
-                />
+                app:urlImg="@{match.homeTeam.crest}"
+                tools:srcCompat="@drawable/ic_profile" />
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_score"
                 android:layout_width="wrap_content"
@@ -75,32 +76,35 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_height="wrap_content"/>
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_away_team"
                 android:layout_width="@dimen/emblem_size_item_match"
                 android:layout_height="@dimen/emblem_size_item_match"
                 android:padding="@dimen/space_8dp"
-                app:urlImg="@{match.awayTeam.crest}"
-                tools:srcCompat="@drawable/ic_profile"
-                app:layout_constraintTop_toTopOf="parent"
+                android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="@id/tv_score"
                 app:layout_constraintStart_toEndOf="@id/tv_score"
-                />
+                app:layout_constraintTop_toTopOf="parent"
+                app:urlImg="@{match.awayTeam.crest}"
+                tools:srcCompat="@drawable/ic_profile" />
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_name_away_team"
                 style="@style/TextItemPrimaryColor"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_10dp"
+                android:ellipsize="end"
                 android:fontFamily="@font/poppins_family"
                 android:gravity="center"
-                android:maxWidth="@dimen/max_width_text_competition_stage"
-                android:text="@{match.awayTeam.tla}"
-                android:textAppearance="@style/TextBody"
+                android:lines="1"
+                android:maxWidth="@dimen/max_width_text_short_name"
+                android:text="@{match.awayTeam.shortName}"
+                android:textSize="@dimen/text_minicaps"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@id/iv_away_team"
-                app:layout_constraintHorizontal_bias="0.3"
-                app:layout_constraintStart_toStartOf="@id/iv_away_team"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/iv_away_team"
+                app:layout_constraintStart_toStartOf="@+id/iv_away_team"
                 app:layout_constraintTop_toBottomOf="@id/iv_away_team"
                 tools:text="AT" />
             <androidx.appcompat.widget.AppCompatTextView
