@@ -1,6 +1,5 @@
 package br.com.joaovitorqueiroz.footballapi.ui.matches.presentation.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -13,7 +12,7 @@ import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.Competition
 
 class CompetitionItemAdapter(
     private val matches: MatchList,
-    private val context: Context
+    private val onClickItem: (id: Long) -> Unit,
 ) : ListAdapter<Competition, CompetitionItemAdapter.CompetitionViewHolder>(DiffItemCallback) {
     inner class CompetitionViewHolder(
         private val binding: ItemMatchesCompetitionBinding,
@@ -22,7 +21,7 @@ class CompetitionItemAdapter(
         private val pool = RecyclerView.RecycledViewPool()
 
         init {
-            binding.rvMatches.adapter = MatchItemAdapter(context)
+            binding.rvMatches.adapter = MatchItemAdapter(action = onClickItem)
             binding.rvMatches.setRecycledViewPool(pool)
         }
 
@@ -30,7 +29,7 @@ class CompetitionItemAdapter(
             val matchesCompetition =
                 matches.matches.filter { it?.competition?.id == competition.id }.filterNotNull()
             binding.competition = competition
-            binding.matchList = matchesCompetition.map { it.toMatch() }
+            binding.matchList = matchesCompetition.map { it.toMatch() }.sortedBy { it.matchDay }
             binding.executePendingBindings()
         }
     }

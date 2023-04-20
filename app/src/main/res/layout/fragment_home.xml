@@ -14,7 +14,7 @@
         android:fitsSystemWindows="true"
         android:paddingHorizontal="@dimen/space_8dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
-        app:layout_scrollFlags="scroll|enterAlwaysCollapsed|enterAlways"
+        app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
         >
         <include android:id="@+id/toolbar_home"
             layout="@layout/container_bar_app"
@@ -24,6 +24,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/space_20dp"
         android:layout_height="match_parent">
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/container_navigation_main"
@@ -42,9 +43,10 @@
         android:id="@+id/bottom_navigation"
         app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
         android:layout_width="match_parent"
-        android:layout_gravity="start|bottom"
+        android:layout_gravity="bottom"
+        android:fitsSystemWindows="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:overScrollMode="ifContentScrolls"
+        android:overScrollMode="always"
         style="@style/BottomBarApp"
         app:menu="@menu/bottom_navigation_menu"
         android:layout_height="wrap_content"/>

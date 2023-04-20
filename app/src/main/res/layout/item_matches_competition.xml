@@ -4,7 +4,7 @@
         <import type="java.util.List"/>
         <variable
             name="matchList"
-            type="List&lt;br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.model.Match>" />
+            type="List&lt;br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model.Match>" />
         <variable
             name="competition"
             type="br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.Competition" />

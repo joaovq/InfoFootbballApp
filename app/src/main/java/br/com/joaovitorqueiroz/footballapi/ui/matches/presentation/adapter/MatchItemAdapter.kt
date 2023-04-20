@@ -1,15 +1,14 @@
 package br.com.joaovitorqueiroz.footballapi.ui.matches.presentation.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.com.joaovitorqueiroz.footballapi.databinding.ItemsMatchBinding
-import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.model.Match
+import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model.Match
 
-class MatchItemAdapter(val context: Context) :
+class MatchItemAdapter(private val action: (id: Long) -> Unit) :
     ListAdapter<Match, MatchItemAdapter.MatchViewHolder>(DiffItemCallback) {
     inner class MatchViewHolder(
         private val binding: ItemsMatchBinding,
@@ -18,6 +17,9 @@ class MatchItemAdapter(val context: Context) :
         fun bind(match: Match) {
             binding.tvScore.text = " X "
             binding.match = match
+            binding.root.setOnClickListener {
+                action(match.id)
+            }
             binding.executePendingBindings()
         }
     }
