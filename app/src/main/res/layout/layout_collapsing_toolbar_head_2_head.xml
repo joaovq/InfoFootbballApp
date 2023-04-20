@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="match"
+            type="br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model.Match" />
+
+        <variable
+            name="matchViewModel"
+            type="br.com.joaovitorqueiroz.footballapi.ui.matchscreen.presentation.viewmodel.MatchViewModel" />
+    </data>
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/color_secondary_brand"
+            android:backgroundTint="@color/color_secondary_brand"
+            android:fitsSystemWindows="true"
+            app:collapsedTitleTextColor="@color/color_primary_brand"
+            app:contentScrim="@color/color_secondary_brand"
+            app:expandedTitleTextColor="@color/color_primary_brand"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:statusBarScrim="@color/color_secondary_brand"
+            app:titleCollapseMode="scale"
+            app:titleEnabled="false"
+            app:toolbarId="@id/toolbar_match">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar_match"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/ic_arrow_backstack"
+                app:navigationIconTint="@color/color_primary_brand">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:urlImg="@{match.competition.emblem ?? ``}" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{match.competition.name}"
+                        android:textAppearance="@style/TextSubject"
+                        android:textColor="@color/color_primary_brand"
+                        android:textStyle="bold"
+                        app:textAllCaps="true" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.appbar.MaterialToolbar>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.95">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_14dp"
+                    android:fontFamily="@font/road_rage_regular"
+                    android:gravity="center"
+                    android:text="@{match.stage == match.stage.GROUP_STAGE ? match.stage.value +` - `+ match.group.value: match.stage.value}"
+                    android:textColor="@color/color_primary_brand"
+                    app:layout_constraintBottom_toTopOf="@id/text_score"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="STAGE" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_home_team"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:layout_constraintBottom_toBottomOf="@id/text_score"
+                    app:layout_constraintEnd_toStartOf="@id/text_score"
+                    app:layout_constraintTop_toTopOf="@id/text_score"
+                    app:srcCompat="@drawable/logo_vitoria"
+                    app:urlImg="@{match.homeTeam.crest ?? ``}" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/road_rage_regular"
+                    android:gravity="center"
+                    android:text="@{match.homeTeam.name}"
+                    android:textColor="@color/color_primary_brand"
+                    app:layout_constraintEnd_toEndOf="@id/iv_home_team"
+                    app:layout_constraintStart_toStartOf="@id/iv_home_team"
+                    app:layout_constraintTop_toBottomOf="@id/iv_home_team"
+                    tools:text="name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/road_rage_regular"
+                    android:padding="@dimen/space_14dp"
+                    android:textColor="@color/color_primary_brand"
+                    android:textSize="@dimen/text_splash_screen"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:textScore="@{match.score}" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_away_team"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:layout_constraintBottom_toBottomOf="@id/text_score"
+                    app:layout_constraintStart_toEndOf="@id/text_score"
+                    app:layout_constraintTop_toTopOf="@id/text_score"
+                    app:srcCompat="@drawable/logo_vitoria"
+                    app:urlImg="@{match.awayTeam.crest ?? ``}" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/road_rage_regular"
+                    android:gravity="center"
+                    android:text="@{match.awayTeam.name}"
+                    android:textColor="@color/color_primary_brand"
+                    app:layout_constraintEnd_toEndOf="@id/iv_away_team"
+                    app:layout_constraintStart_toStartOf="@id/iv_away_team"
+                    app:layout_constraintTop_toBottomOf="@id/iv_away_team"
+                    tools:text="name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_14dp"
+                    android:fontFamily="@font/road_rage_regular"
+                    android:gravity="center"
+                    android:text="@{match.status.value}"
+                    android:textColor="@color/color_primary_brand"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_score"
+                    tools:text="STATUS" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+</layout>

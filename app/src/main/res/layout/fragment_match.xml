@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="match"
+            type="br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model.Match" />
+
+        <variable
+            name="matchViewModel"
+            type="br.com.joaovitorqueiroz.footballapi.ui.matchscreen.presentation.viewmodel.MatchViewModel" />
+        <variable
+            name="head2Head"
+            type="br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model.Head2Head" />
+    </data>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.matchscreen.presentation.view.MatchFragment">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:elevation="0dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior">
+
+            <include
+                android:id="@+id/layout_collapsing_toolbar"
+                layout="@layout/layout_collapsing_toolbar_head_2_head"
+                bind:match="@{match}"
+                bind:matchViewModel="@{matchViewModel}"
+                />
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_match_contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabSelectedTextColor="@color/color_secondary_brand"
+                app:tabIndicator="@color/color_secondary_brand"
+                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+                app:tabIconTint="@color/color_secondary_brand"
+                app:visibilityView="@{!matchViewModel.isLoading()}"
+                app:tabIndicatorColor="@color/color_secondary_brand"/>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            app:visibilityView="@{!matchViewModel.isLoading()}">
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_container_match"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/pb_match"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:visibilityView="@{matchViewModel.isLoading()}" />
+        <include
+            android:id="@+id/layout_head_2_head"
+            layout="@layout/layout_bottom_sheet_head_to_head"
+            bind:head2Head="@{head2Head}"
+            bind:match="@{match}" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
