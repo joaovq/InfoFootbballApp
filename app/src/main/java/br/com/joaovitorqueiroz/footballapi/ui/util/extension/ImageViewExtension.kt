@@ -3,13 +3,11 @@ package br.com.joaovitorqueiroz.footballapi.ui.util.extension
 import android.content.Context
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
-import androidx.core.net.toUri
 import br.com.joaovitorqueiroz.footballapi.R
 import coil.ImageLoader
 import coil.decode.SvgDecoder
 import coil.load
 import coil.request.ImageRequest
-import com.bumptech.glide.Glide
 
 fun ImageView.loadImage(
     context: Context = this.context,

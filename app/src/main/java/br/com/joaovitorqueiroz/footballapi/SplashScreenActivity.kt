@@ -7,8 +7,8 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import br.com.joaovitorqueiroz.footballapi.databinding.ActivitySplashScreenBinding
+import br.com.joaovitorqueiroz.footballapi.ui.util.extension.viewBinding
 import br.com.joaovitorqueiroz.footballapi.util.extension.animViewbyId
-import br.com.joaovitorqueiroz.footballapi.util.extension.viewBinding
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {

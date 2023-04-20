@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import br.com.joaovitorqueiroz.footballapi.data.preferences.UserPreferences
 import br.com.joaovitorqueiroz.footballapi.databinding.ActivityMainBinding
-import br.com.joaovitorqueiroz.footballapi.util.extension.viewBinding
+import br.com.joaovitorqueiroz.footballapi.ui.util.extension.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import timber.log.Timber.Forest.plant
