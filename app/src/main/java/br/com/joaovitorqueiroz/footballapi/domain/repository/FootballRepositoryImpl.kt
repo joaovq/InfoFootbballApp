@@ -1,13 +1,15 @@
-package br.com.joaovitorqueiroz.footballapi.data.repository
+package br.com.joaovitorqueiroz.footballapi.domain.repository
 
 import br.com.joaovitorqueiroz.footballapi.data.remotedatasource.data.RemoteDataSource
 import br.com.joaovitorqueiroz.footballapi.ui.matches.data.api.MatchList
+import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.Head2HeadResponse
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.MatchResponse
 import javax.inject.Inject
 
 interface FootballRepository {
     suspend fun getAllMatch(): MatchList?
     suspend fun getMatch(id: Long): MatchResponse?
+    suspend fun getHead2Head(id: Long): Head2HeadResponse?
 }
 
 class FootballRepositoryImpl @Inject constructor(
@@ -20,4 +22,7 @@ class FootballRepositoryImpl @Inject constructor(
     override suspend fun getMatch(id: Long): MatchResponse? {
         return remoteDataSource.getById(id)
     }
+
+    override suspend fun getHead2Head(id: Long): Head2HeadResponse? =
+        remoteDataSource.getHeadToHead(id)
 }

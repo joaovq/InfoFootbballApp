@@ -1,7 +1,7 @@
 package br.com.joaovitorqueiroz.footballapi.domain.mapper
 
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.MatchResponse
-import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.model.Match
+import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model.Match
 
 fun List<MatchResponse?>?.toMapperCompetition() = this?.map { it?.competition }?.toSet()
 

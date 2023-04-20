@@ -1,4 +1,4 @@
-package br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.model
+package br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model
 
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.Area
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.AwayTeam
@@ -9,6 +9,7 @@ import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.Score
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.Season
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.Stage
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.Status
+import java.io.Serializable
 import java.util.Date
 
 data class Match(
@@ -24,4 +25,4 @@ data class Match(
     val lastUpdated: Date,
     val homeTeam: HomeTeam,
     val awayTeam: AwayTeam
-)
+) : Serializable
