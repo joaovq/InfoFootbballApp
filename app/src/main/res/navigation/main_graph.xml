@@ -22,11 +22,23 @@
         android:id="@+id/homeFragment"
         android:name="br.com.joaovitorqueiroz.footballapi.ui.home.presentation.view.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/homeFragment_to_home_graph"
             app:destination="@id/home_graph" />
+        <action
+            android:id="@+id/action_homeFragment_to_matchFragment"
+            app:destination="@id/matchFragment" />
     </fragment>
-    <include
-        app:graph="@navigation/home_graph"/>
+    <include app:graph="@navigation/home_graph" />
+    <fragment
+        android:id="@+id/matchFragment"
+        android:name="br.com.joaovitorqueiroz.footballapi.ui.matchscreen.presentation.view.MatchFragment"
+        android:label="fragment_match"
+        tools:layout="@layout/fragment_match">
+        <argument
+            android:name="matchId"
+            app:argType="long" />
+    </fragment>
+
 </navigation>

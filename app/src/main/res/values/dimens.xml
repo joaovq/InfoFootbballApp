@@ -16,13 +16,14 @@
     <dimen name="text_medium14sp">14sp</dimen>
     <dimen name="text_regular14sp">14sp</dimen>
     <dimen name="text_regular12sp">12sp</dimen>
-    <dimen name="text_minicaps">10sp</dimen>
+    <dimen name="text_minicaps">8sp</dimen>
     <dimen name="text_buttons">14sp</dimen>
 
-<!--    Home Fragment-->
+    <!--    Home Fragment-->
     <dimen name="title_toolbar_size">35sp</dimen>
     <dimen name="bottom_bar_corner_radius">15dp</dimen>
     <dimen name="stroke_bottom_bar_width">1dp</dimen>
+    <!--Matches Fragment-->
     <dimen name="emblem_size_item_match">50dp</dimen>
     <dimen name="text_size_score_item_match">30sp</dimen>
     <dimen name="max_width_text_competition_stage">70dp</dimen>
@@ -31,6 +32,15 @@
     <dimen name="card_item_space_into">5dp</dimen>
     <dimen name="width_time_match_item">60dp</dimen>
     <dimen name="max_width_text_short_name">100dp</dimen>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
+    <!--Match Fragment-->
+    <dimen name="iv_emblem_size">50dp</dimen>
+    <dimen name="space_text_head_to_head">4dp</dimen>
+    <dimen name="bottom_sheet_peek_height_head_2_head">100dp</dimen>
+    <dimen name="width_divider_head_to_head">1dp</dimen>
+    <dimen name="width_guide_bottom_sheet">40dp</dimen>
+    <dimen name="height_guide_bottom_sheet">5dp</dimen>
 
 
 </resources>
