@@ -29,7 +29,7 @@
             android:id="@+id/tv_competition_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxWidth="180dp"
+            android:maxWidth="@dimen/max_width_name_competition_item_match"
             android:gravity="center"
             android:textAppearance="@style/TextSubject"
             android:fontFamily="@font/poppins_family"

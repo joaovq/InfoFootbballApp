@@ -37,10 +37,12 @@
     <!--Match Fragment-->
     <dimen name="iv_emblem_size">50dp</dimen>
     <dimen name="space_text_head_to_head">4dp</dimen>
-    <dimen name="bottom_sheet_peek_height_head_2_head">100dp</dimen>
+    <dimen name="bottom_sheet_peek_height_head_2_head">120dp</dimen>
     <dimen name="width_divider_head_to_head">1dp</dimen>
     <dimen name="width_guide_bottom_sheet">40dp</dimen>
     <dimen name="height_guide_bottom_sheet">5dp</dimen>
+    <dimen name="max_width_name_competition_item_match">180dp</dimen>
+    <dimen name="elevation_bottom_sheet">200dp</dimen>
 
 
 </resources>
