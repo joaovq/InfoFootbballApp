@@ -13,7 +13,7 @@ interface FootballService {
     @GET("matches/")
     suspend fun getMatches(@Header("X-Auth-Token") apiToken: String): Response<MatchList>
 
-    @GET("competitions/")
+    @GET("competitionResponses/")
     suspend fun getCompetitions(@Header("X-Auth-Token") apiToken: String): Response<CompetitionList>
 
     @GET("matches/{id}")

@@ -1,8 +1,8 @@
 package br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api
 
-data class Aggregates(
+data class AggregatesResponse(
     val numberOfMatches: Int?,
     val totalGoals: Int?,
-    val homeTeam: HomeTeam?,
-    val awayTeam: AwayTeam?,
+    val homeTeam: HomeTeamResponse?,
+    val awayTeam: AwayTeamResponse?,
 )

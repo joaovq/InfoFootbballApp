@@ -1,6 +1,6 @@
 package br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api
 
-data class HalfTime(
+data class FullTimeResponse(
     val home: Int?,
-    val away: Int?,
+    val away: Int?
 )

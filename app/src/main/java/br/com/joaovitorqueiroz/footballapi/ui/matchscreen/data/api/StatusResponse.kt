@@ -1,6 +1,6 @@
 package br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api
 
-enum class Status(val value: String) {
+enum class StatusResponse(val value: String) {
     SCHEDULED("SCHEDULED"),
     LIVE("LIVE"),
     IN_PLAY("IN PLAY"),

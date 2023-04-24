@@ -85,6 +85,7 @@ class MatchFragment : Fragment() {
                     is MatchViewModel.MatchUIState.Success<Head2HeadResponse?> -> {
                         Timber.tag("data").d("%s", safeState.data.toString())
                         safeState.data?.toHead2Head()?.let { safeHead2Head ->
+                            Timber.tag("data mapper:").d("%s", safeHead2Head.toString())
                             _binding.head2Head = safeHead2Head
                         }
                     }

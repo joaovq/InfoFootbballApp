@@ -1,6 +1,8 @@
-package br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api
+package br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model
 
-enum class Stage(val value: String) {
+import java.io.Serializable
+
+enum class Stage(val value: String) : Serializable {
     FINAL("FINAL"),
     THIRD_PLACE("THIRD PLACE"),
     SEMI_FINALS("SEMI FINALS"),

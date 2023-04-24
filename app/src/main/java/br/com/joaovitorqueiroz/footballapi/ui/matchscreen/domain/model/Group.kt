@@ -1,6 +1,8 @@
-package br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api
+package br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model
 
-enum class Group(val value: String) {
+import java.io.Serializable
+
+enum class Group(val value: String) : Serializable {
     GROUP_A("GROUP A"),
     GROUP_B("GROUP B"),
     GROUP_C("GROUP C"),

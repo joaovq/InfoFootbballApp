@@ -6,6 +6,6 @@ import br.com.joaovitorqueiroz.footballapi.ui.matches.data.api.ResultSet
 data class Head2HeadResponse(
     val filters: Filters?,
     val resultSet: ResultSet?,
-    val aggregates: Aggregates?,
+    val aggregates: AggregatesResponse?,
     val matches: List<MatchResponse>?
 )

@@ -3,7 +3,7 @@ package br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api
 import com.google.gson.annotations.SerializedName
 import java.util.*
 
-data class Season(
+data class SeasonResponse(
     val id: Long,
     @SerializedName("startDate")
     val startDate: Date,

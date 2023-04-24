@@ -7,8 +7,9 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.com.joaovitorqueiroz.footballapi.R
 import br.com.joaovitorqueiroz.footballapi.ui.matches.presentation.adapter.MatchItemAdapter
-import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.Score
+import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.ScoreResponse
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model.Match
+import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model.Score
 import br.com.joaovitorqueiroz.footballapi.ui.util.extension.gone
 import br.com.joaovitorqueiroz.footballapi.ui.util.extension.loadImage
 import br.com.joaovitorqueiroz.footballapi.ui.util.extension.visible
@@ -21,8 +22,8 @@ fun loadImage(imageView: AppCompatImageView?, url: String?) {
 @BindingAdapter("textScore")
 fun bindTextScore(text: TextView, score: Score?) {
     score?.let {
-        val home: Int? = score.fullTime.home ?: score.halfTime.home
-        val away: Int? = score.fullTime.away ?: score.halfTime.away
+        val home: Int? = score.fullTime?.home ?: score.halfTime?.home
+        val away: Int? = score.fullTime?.away ?: score.halfTime?.away
         home?.let {
             text.text = text.context.getString(R.string.text_score_item_match, home, away)
         }

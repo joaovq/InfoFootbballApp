@@ -9,7 +9,7 @@
         <item name="colorSecondary">@color/color_secondary_brand</item>
         <item name="colorSecondaryVariant">@color/color_secondary_brand</item>
         <item name="colorOnSecondary">@color/color_secondary_brand</item>
-        <!-- Status bar color. -->
+        <!-- StatusResponse bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar">true</item>
