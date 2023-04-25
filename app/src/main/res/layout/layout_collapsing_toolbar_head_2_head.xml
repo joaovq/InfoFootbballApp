@@ -13,8 +13,7 @@
     </data>
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="@color/color_secondary_brand"
+            android:layout_height="@dimen/collapse_toolbar_match_height"
             android:backgroundTint="@color/color_secondary_brand"
             android:fitsSystemWindows="true"
             app:collapsedTitleTextColor="@color/color_primary_brand"
@@ -23,6 +22,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:statusBarScrim="@color/color_secondary_brand"
             app:titleCollapseMode="scale"
+            android:background="@drawable/bg_collapse_toolbar_match"
             app:titleEnabled="false"
             app:toolbarId="@id/toolbar_match">
 

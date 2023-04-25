@@ -43,6 +43,7 @@
     <dimen name="height_guide_bottom_sheet">5dp</dimen>
     <dimen name="max_width_name_competition_item_match">180dp</dimen>
     <dimen name="elevation_bottom_sheet">200dp</dimen>
+    <dimen name="collapse_toolbar_match_height">300dp</dimen>
 
 
 </resources>

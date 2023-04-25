@@ -12,24 +12,29 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.android.scopes.ViewModelScoped
 
 @Module
 @InstallIn(ViewModelComponent::class)
 abstract class ViewModelModule {
     @Binds
+    @ViewModelScoped
     abstract fun bindFootballRepository(
         footballRepositoryImpl: FootballRepositoryImpl,
     ): FootballRepository
 
     @Binds
+    @ViewModelScoped
     abstract fun bindGetAllMatches(
         getAllMatchesUseCase: GetAllMatchesUseCaseImpl,
     ): GetAllMatchesUseCase
     @Binds
+    @ViewModelScoped
     abstract fun bindGetMatch(
         getMatchUseCase: GetMatchUseCaseImpl,
     ): GetMatchUseCase
     @Binds
+    @ViewModelScoped
     abstract fun bindGetHead2Head(
         getMatchHead2Head: GetMatchHead2Head,
     ): GetMatchHead2HeadUseCase
