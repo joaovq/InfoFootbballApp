@@ -12,7 +12,7 @@ class StatisticsMatchAdapter(
     lifecycle: Lifecycle,
     private val match: Match,
 ) : FragmentStateAdapter(fragmentManager, lifecycle) {
-    override fun getItemCount(): Int = 2
+    override fun getItemCount(): Int = 1
 
     override fun createFragment(position: Int): Fragment {
         return MatchDetailFragment.newInstance(match)

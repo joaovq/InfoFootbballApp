@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import br.com.joaovitorqueiroz.footballapi.R
@@ -26,7 +26,7 @@ import timber.log.Timber
 class MatchFragment : Fragment() {
     private lateinit var _binding: FragmentMatchBinding
     private val args: MatchFragmentArgs by navArgs()
-    private val matchViewModel: MatchViewModel by viewModels()
+    private val matchViewModel: MatchViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
