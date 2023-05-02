@@ -39,12 +39,12 @@
                 android:id="@+id/tab_match_contents"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:tabSelectedTextColor="@color/color_secondary_brand"
-                app:tabIndicator="@color/color_secondary_brand"
+                app:tabIconTint="?attr/colorOnSecondary"
+                app:tabSelectedTextColor="?attr/colorOnSecondary"
+                app:tabRippleColor="?attr/colorOnSecondary"
                 app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
-                app:tabIconTint="@color/color_secondary_brand"
                 app:visibilityView="@{!matchViewModel.isLoading()}"
-                app:tabIndicatorColor="@color/color_secondary_brand"/>
+                app:tabIndicatorColor="?attr/colorOnSecondary"/>
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout

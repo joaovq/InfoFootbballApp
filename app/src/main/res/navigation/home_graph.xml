@@ -11,11 +11,6 @@
         tools:layout="@layout/fragment_matches" />
 
     <fragment
-        android:id="@+id/analyticsFragment"
-        android:name="br.com.joaovitorqueiroz.footballapi.ui.analytics.presentation.view.AnalyticsFragment"
-        android:label="@string/title_item_menu_analytics"
-        tools:layout="@layout/fragment_analytics" />
-    <fragment
         android:id="@+id/newsFragment"
         android:name="br.com.joaovitorqueiroz.footballapi.ui.news.view.NewsFragment"
         android:label="@string/title_item_menu_news"
