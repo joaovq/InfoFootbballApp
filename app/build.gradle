@@ -22,8 +22,7 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "br.com.joaovitorqueiroz.footballapi.CustomTestRunnerInfoFootball"
     }
 
     buildTypes {
@@ -51,30 +50,6 @@ android {
     }
 }
 
-def ktx_core_version = "1.9.0"
-def app_compat_version = "1.6.1"
-def material_version = "1.8.0"
-def timber_version = "5.0.1"
-def ok_http_interceptor_version = "4.10.0"
-def constraint_layout_version = "2.1.4"
-def junit_version = "4.13.2"
-def ext_junit_version = "1.1.5"
-def expresso_version = "3.5.1"
-def retrofit_version = "2.9.0"
-def gson_version = "2.10.1"
-def activity_version = "1.7.0"
-def fragment_version = "1.5.6"
-def lifecycle_version = "2.6.1"
-def nav_version = "2.5.3"
-def bom_version = "31.3.0"
-def mockitoVersion = "4.10.0"
-def mockitoKotlinVersion = "4.1.0"
-def mockkVersion = "1.13.4"
-def coil_version = "2.2.2"
-def coil_svg_version = "2.3.0"
-
-
-
 dependencies {
     implementation "androidx.core:core-ktx:$ktx_core_version"
     implementation "androidx.appcompat:appcompat:$app_compat_version"
@@ -86,6 +61,7 @@ dependencies {
     implementation("io.coil-kt:coil:$coil_version")
 
     implementation("io.coil-kt:coil-svg:$coil_svg_version")
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayout_version"
 //    Test's
     androidTestImplementation("androidx.test:core-ktx:1.5.0")
     testImplementation "junit:junit:$junit_version"
@@ -95,6 +71,9 @@ dependencies {
     testImplementation "org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion"
     debugImplementation("androidx.fragment:fragment-testing:$fragment_version")
     testImplementation "io.mockk:mockk:$mockkVersion"
+    testImplementation("androidx.test.ext:truth:1.5.0")
+    def coroutines_version = "1.6.4"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
 //    Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
@@ -117,6 +96,13 @@ dependencies {
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
 //    DI
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:$hilt_version")
+    kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
+//    Hilt test
+    androidTestImplementation  "com.google.dagger:hilt-android-testing:$hilt_version"
+    testImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
+    kaptTest "com.google.dagger:hilt-android-compiler:$hilt_version"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
+//    Circle Image view
+    implementation "de.hdodenhof:circleimageview:$circle_image_view_version"
 }
