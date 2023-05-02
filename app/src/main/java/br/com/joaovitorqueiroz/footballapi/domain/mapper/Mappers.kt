@@ -44,10 +44,22 @@ fun MatchResponse.toMatch(): Match = Match(
     this.awayTeam.toAwayTeam(),
 )
 
-fun CompetitionResponse.toCompetition() =
-    Competition(this.id, this.area?.toArea(), this.name, this.code, this.type, this.emblem)
+fun CompetitionResponse?.toCompetition() =
+    Competition(
+        this?.id ?: 0,
+        this?.area?.toArea(),
+        this?.name ?: "",
+        this?.code ?: "",
+        this?.type ?: "",
+        this?.emblem ?: "",
+    )
 
-fun AreaResponse.toArea() = Area(this.id, this.name, this.code, this.flag)
+fun AreaResponse?.toArea() = Area(
+    this?.id ?: 0,
+    this?.name ?: "",
+    this?.code ?: "",
+    this?.flag ?: ""
+)
 
 fun HomeTeamResponse.toHomeTeam() = HomeTeam(
     this.id ?: 0,
