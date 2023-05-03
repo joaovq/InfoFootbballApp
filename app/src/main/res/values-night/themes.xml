@@ -1,18 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.FootballApi" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.FootballApi" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/color_primary_brand_dark</item>
         <item name="colorPrimaryVariant">@color/color_primary_brand_dark</item>
         <item name="colorOnPrimary">@color/color_primary_brand_dark</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/color_secondary_brand_dark</item>
-        <item name="colorSecondaryVariant">@color/color_secondary_brand_dark</item>
+        <item name="colorSecondaryVariant">@color/color_primary_brand_dark</item>
         <item name="colorOnSecondary">@color/color_secondary_brand_dark</item>
         <!-- StatusResponse bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <!-- Customize your theme here. -->
-        <item name="android:windowLightStatusBar">true</item>
         <item name="android:enforceStatusBarContrast" tools:targetApi="q">true</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@drawable/ic_ball_logo</item>
