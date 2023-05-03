@@ -46,7 +46,14 @@ class MatchesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setListeners()
         initObservers()
+    }
+
+    private fun setListeners() {
+        _binding.srlMatches.setOnRefreshListener {
+            matchesViewModel.getAllMatches()
+        }
     }
 
     private fun initObservers() {
@@ -55,6 +62,7 @@ class MatchesFragment : Fragment() {
                 when (safeState) {
                     is MatchesUIState.Error -> {
                         safeState.exception.printStackTrace()
+                        _binding.srlMatches.isRefreshing = false
                     }
 
                     is MatchesUIState.Success<MatchList?> -> {
@@ -75,6 +83,7 @@ class MatchesFragment : Fragment() {
                         adapter.submitList(
                             safeState.data?.matches.toMapperCompetition()?.toList(),
                         )
+                        _binding.srlMatches.isRefreshing = false
                     }
                 }
             }
