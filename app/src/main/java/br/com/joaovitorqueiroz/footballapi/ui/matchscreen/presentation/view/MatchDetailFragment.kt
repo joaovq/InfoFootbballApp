@@ -22,19 +22,7 @@ const val ARG_MATCH = "matchId"
 @AndroidEntryPoint
 class MatchDetailFragment : Fragment() {
     private lateinit var _binding: FragmentMatchDetailBinding
-    private var param: Match? = null
     private val matchViewModel: MatchViewModel by activityViewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        /*arguments?.let {
-            param = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                it.getSerializable(ARG_MATCH, Match::class.java)
-            } else {
-                it.getSerializable(ARG_MATCH) as Match
-            }
-        }*/
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,10 +36,6 @@ class MatchDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        /*param?.let {
-            _binding.match = it
-        }*/
-        /*TODO compartilhar o view model*/
         matchViewModel.match.observe(viewLifecycleOwner) {
             it?.let { safeState ->
                 when (safeState) {
@@ -64,22 +48,10 @@ class MatchDetailFragment : Fragment() {
                         Timber.tag("data").d("%s", safeState.data.toString())
                         safeState.data?.toMatch()?.let { safeMatch ->
                             _binding.match = safeMatch
-                            /*setUpViewPager(safeMatch)*/
                         }
                     }
                 }
             }
         }
-    }
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance(match: Match) =
-            MatchDetailFragment().apply {
-                arguments = Bundle().apply {
-                    putSerializable(ARG_MATCH, match)
-                }
-            }
     }
 }

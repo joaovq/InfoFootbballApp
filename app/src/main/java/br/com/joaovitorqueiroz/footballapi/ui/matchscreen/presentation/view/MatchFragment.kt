@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import br.com.joaovitorqueiroz.footballapi.R
 import br.com.joaovitorqueiroz.footballapi.databinding.FragmentMatchBinding
 import br.com.joaovitorqueiroz.footballapi.domain.mapper.toMatch
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.Head2HeadResponse
@@ -16,6 +15,7 @@ import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.MatchResponse
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.mappers.toHead2Head
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model.Match
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.presentation.adapter.StatisticsMatchAdapter
+import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.presentation.factory.StatisticsFactory
 import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.presentation.viewmodel.MatchViewModel
 import br.com.joaovitorqueiroz.footballapi.ui.util.extension.snackbar
 import com.google.android.material.tabs.TabLayoutMediator
@@ -96,9 +96,15 @@ class MatchFragment : Fragment() {
 
     private fun setUpViewPager(match: Match) {
         _binding.vpContainerMatch.adapter =
-            activity?.supportFragmentManager?.let { StatisticsMatchAdapter(it, lifecycle, match) }
-        TabLayoutMediator(_binding.tabMatchContents, _binding.vpContainerMatch) { tabs, _ ->
-            tabs.setIcon(R.drawable.ic_ball_logo)
+            activity?.supportFragmentManager?.let {
+                StatisticsMatchAdapter(
+                    it,
+                    lifecycle,
+                    StatisticsFactory.createListFragmentsStatistics(),
+                )
+            }
+        TabLayoutMediator(_binding.tabMatchContents, _binding.vpContainerMatch) { tabs, position ->
+            tabs.setIcon(StatisticsFactory.createListFragmentsStatistics()[position].icon)
         }.attach()
     }
 }

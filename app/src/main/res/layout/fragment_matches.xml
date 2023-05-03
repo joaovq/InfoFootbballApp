@@ -1,36 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+
     <data>
+
         <variable
             name="viewModel"
             type="br.com.joaovitorqueiroz.footballapi.ui.matches.presentation.viewmodel.MatchesViewModel" />
+
         <variable
             name="dialog"
             type="android.app.Dialog" />
     </data>
-    <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:orientation="vertical"
-        android:padding="@dimen/space_20dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            style="@style/TextFont"
-            android:id="@+id/tv_your_matches"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="@string/text_your_matches"
-            android:textAppearance="@style/TextTitle"
-            android:textStyle="bold" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_matches_competition"
-            android:layout_height="wrap_content"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_matches_competition" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            android:padding="@dimen/space_20dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_your_matches"
+                style="@style/TextFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_your_matches"
+                android:textAppearance="@style/TextTitle"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_filters"
+                style="@style/Widget.AppCompat.Spinner.DropDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/filters"
+                android:textSize="@dimen/text_regular12sp"
+                app:layout_constraintBottom_toTopOf="@id/srl_matches"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/srl_matches"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_your_matches"
+                >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_matches_competition"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_matches_competition" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </layout>

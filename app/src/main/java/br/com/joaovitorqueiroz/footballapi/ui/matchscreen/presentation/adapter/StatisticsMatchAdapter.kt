@@ -4,17 +4,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model.Match
-import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.presentation.view.MatchDetailFragment
+import br.com.joaovitorqueiroz.footballapi.ui.matchscreen.presentation.factory.Statistics
 
-class StatisticsMatchAdapter(
-    fragmentManager: FragmentManager,
-    lifecycle: Lifecycle,
-    private val match: Match,
+data class StatisticsMatchAdapter(
+    val fragmentManager: FragmentManager,
+    val lifecycle: Lifecycle,
+    val listFactory: List<Statistics>
 ) : FragmentStateAdapter(fragmentManager, lifecycle) {
-    override fun getItemCount(): Int = 1
+    override fun getItemCount(): Int = listFactory.size
 
     override fun createFragment(position: Int): Fragment {
-        return MatchDetailFragment.newInstance(match)
+        return listFactory[position].fragment
     }
 }
