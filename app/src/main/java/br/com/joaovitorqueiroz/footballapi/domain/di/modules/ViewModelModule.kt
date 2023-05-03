@@ -8,6 +8,8 @@ import br.com.joaovitorqueiroz.footballapi.domain.usecases.GetMatchHead2Head
 import br.com.joaovitorqueiroz.footballapi.domain.usecases.GetMatchHead2HeadUseCase
 import br.com.joaovitorqueiroz.footballapi.domain.usecases.GetMatchUseCase
 import br.com.joaovitorqueiroz.footballapi.domain.usecases.GetMatchUseCaseImpl
+import br.com.joaovitorqueiroz.footballapi.domain.usecases.GetTeamById
+import br.com.joaovitorqueiroz.footballapi.domain.usecases.GetTeamByIdUseCase
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -28,14 +30,22 @@ abstract class ViewModelModule {
     abstract fun bindGetAllMatches(
         getAllMatchesUseCase: GetAllMatchesUseCaseImpl,
     ): GetAllMatchesUseCase
+
     @Binds
     @ViewModelScoped
     abstract fun bindGetMatch(
         getMatchUseCase: GetMatchUseCaseImpl,
     ): GetMatchUseCase
+
     @Binds
     @ViewModelScoped
     abstract fun bindGetHead2Head(
         getMatchHead2Head: GetMatchHead2Head,
     ): GetMatchHead2HeadUseCase
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindGetTeam(
+        getTeamById: GetTeamById,
+    ): GetTeamByIdUseCase
 }
