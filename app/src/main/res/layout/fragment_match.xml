@@ -31,7 +31,7 @@
 
             <include
                 android:id="@+id/layout_collapsing_toolbar"
-                layout="@layout/layout_collapsing_toolbar_head_2_head"
+                layout="@layout/layout_collapsing_toolbar_match"
                 bind:match="@{match}"
                 bind:matchViewModel="@{matchViewModel}"
                 />
@@ -54,12 +54,8 @@
             app:visibilityView="@{!matchViewModel.isLoading()}">
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/vp_container_match"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -73,6 +69,7 @@
             android:id="@+id/layout_head_2_head"
             layout="@layout/layout_bottom_sheet_head_to_head"
             bind:head2Head="@{head2Head}"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
             bind:match="@{match}" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

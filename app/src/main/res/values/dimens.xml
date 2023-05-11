@@ -37,7 +37,7 @@
     <!--Match Fragment-->
     <dimen name="iv_emblem_size">50dp</dimen>
     <dimen name="space_text_head_to_head">4dp</dimen>
-    <dimen name="bottom_sheet_peek_height_head_2_head">110dp</dimen>
+    <dimen name="bottom_sheet_peek_height_head_2_head">90dp</dimen>
     <dimen name="width_divider_head_to_head">1dp</dimen>
     <dimen name="width_guide_bottom_sheet">40dp</dimen>
     <dimen name="height_guide_bottom_sheet">5dp</dimen>
@@ -47,4 +47,5 @@
     <!--Match Person Fragment-->
     <dimen name="size_image_person_squad">50dp</dimen>
     <dimen name="image_elevation_person_squad">10dp</dimen>
+    <dimen name="height_radio_group_persons_match">48dp</dimen>
 </resources>

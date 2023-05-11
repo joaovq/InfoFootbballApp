@@ -24,6 +24,7 @@ class CompetitionItemAdapter(
         init {
             binding.rvMatches.adapter = MatchItemAdapter(action = onClickItem)
             binding.rvMatches.setRecycledViewPool(pool)
+            binding.rvMatches.setHasFixedSize(true)
         }
 
         fun bind(competitionResponse: CompetitionResponse) {

@@ -1,46 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
             name="match"
             type="br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model.Match" />
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
     </data>
-    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.matchscreen.presentation.view.MatchDetailFragment">
+        android:paddingVertical="@dimen/space_20dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/result_full_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`FULL TIME:`+match.score.fullTime.home+` : `+ match.score.fullTime.away}"
+            android:textAppearance="@style/TextBody"
+            android:textStyle="bold"
+            app:visibilityView="@{match.score.fullTime.home != null}"
+             />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/result_full_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{`FULL TIME:`+match.score.fullTime.home+` : `+ match.score.fullTime.away}"
-                android:textAppearance="@style/TextBody"
-                app:visibilityView="@{match.score.fullTime.home != null}"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/result_half_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{`HALF TIME: `+match.score.halfTime.home+` : `+ match.score.halfTime.away}"
-                android:textAppearance="@style/TextBody"
-                app:visibilityView="@{match.score.halfTime.home != null}"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/result_full_time" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/result_half_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`HALF TIME: `+match.score.halfTime.home+` : `+ match.score.halfTime.away}"
+            android:textAppearance="@style/TextBody"
+            app:visibilityView="@{match.score.halfTime.home != null}"
+            android:textStyle="bold"
+             />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

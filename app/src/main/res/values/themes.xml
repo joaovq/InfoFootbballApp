@@ -68,7 +68,6 @@
         <item name="itemIconTint">@drawable/bottom_item_selector</item>
         <item name="itemIconSize">30dp</item>
         <item name="android:activatedBackgroundIndicator">@drawable/shape_indicator_bg_bottom_bar</item>
-        <item name="itemRippleColor">@null</item>
         <item name="labelVisibilityMode">unlabeled</item>
     </style>
     <style name="ItemMatchesStyle" parent="Widget.MaterialComponents.CardView">

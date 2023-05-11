@@ -32,7 +32,7 @@
         <RadioGroup
             android:id="@+id/radio_select_squad"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/height_radio_group_persons_match"
             android:gravity="center"
             android:orientation="horizontal"
             android:layout_marginVertical="@dimen/space_8dp"
@@ -50,6 +50,7 @@
                 android:background="@drawable/item_selector_radio_button_squad"
                 android:textColor="@drawable/radio_group_text_color"
                 style="@style/TextBody"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:checked="true"
                 android:text="@{match.homeTeam.name}"
                 tools:text="Vitoria"
@@ -61,6 +62,7 @@
                 android:button="@null"
                 android:paddingHorizontal="@dimen/space_8dp"
                 style="@style/TextBody"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:textColor="@drawable/radio_group_text_color"
                 android:background="@drawable/item_selector_radio_button_squad"
                 android:text="@{match.awayTeam.name}"
@@ -72,12 +74,13 @@
             android:layout_width="wrap_content"
             tools:text="Guardiola"
             android:gravity="center"
-            style="@style/TextTitle"
+            style="@style/TextSubject"
             android:text="@{coach.name}"
             app:visibilityView="@{!viewModel.isLoading()}"
             android:textAppearance="@style/TextFont"
             android:textStyle="bold"
             android:layout_marginTop="@dimen/space_8dp"
+            android:padding="@dimen/space_8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_height="wrap_content"
@@ -86,7 +89,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_squad_team"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:padding="@dimen/space_8dp"
             android:layout_height="0dp"
             android:orientation="vertical"
@@ -94,6 +97,8 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:visibilityView="@{!viewModel.isLoading()}"
             app:layout_constraintTop_toBottomOf="@id/tv_squad_coach_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
@@ -108,6 +113,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -109,6 +109,10 @@ dependencies {
     kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
 //    Circle Image view
     implementation "de.hdodenhof:circleimageview:$circle_image_view_version"
+//    Room
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt("androidx.room:room-compiler:$room_version")
+    testImplementation "androidx.room:room-testing:$room_version"
 }
 task jacocoTestReport(type: JacocoReport,
         dependsOn: ['testDebugUnitTest']) {

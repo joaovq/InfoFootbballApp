@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     app:menu="@menu/home_menu"
     app:navigationIcon="@drawable/ic_arrow_backstack"
-    app:layout_scrollFlags="scroll|enterAlways"
+    app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
     app:layout_collapseMode="pin"
     app:elevation="0dp"
     app:titleTextAppearance="@style/TextToolbar"

@@ -62,7 +62,6 @@
         <item name="android:padding">@dimen/space_8dp</item>
         <item name="itemIconTint">@color/color_secondary_brand_dark</item>
         <item name="itemIconSize">30dp</item>
-        <item name="itemRippleColor">@null</item>
         <item name="labelVisibilityMode">unlabeled</item>
     </style>
 </resources>
