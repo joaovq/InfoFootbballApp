@@ -7,8 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
+import br.com.joaovitorqueiroz.footballapi.R
 import br.com.joaovitorqueiroz.footballapi.databinding.FragmentMatchesBinding
+import br.com.joaovitorqueiroz.footballapi.domain.mapper.toMapperCompetition
+import br.com.joaovitorqueiroz.footballapi.ui.home.presentation.view.HomeFragmentDirections
+import br.com.joaovitorqueiroz.footballapi.ui.matches.data.api.MatchList
+import br.com.joaovitorqueiroz.footballapi.ui.matches.presentation.adapter.CompetitionItemAdapter
+import br.com.joaovitorqueiroz.footballapi.ui.matches.presentation.viewmodel.MatchesUIState
 import br.com.joaovitorqueiroz.footballapi.ui.matches.presentation.viewmodel.MatchesViewModel
+import br.com.joaovitorqueiroz.footballapi.ui.util.extension.showProgressDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -38,5 +46,54 @@ class MatchesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setListeners()
+        initObservers()
+    }
+
+    private fun setListeners() {
+        _binding.srlMatches.setOnRefreshListener {
+            matchesViewModel.getAllMatches()
+        }
+    }
+
+    private fun initObservers() {
+        matchesViewModel.matchList.observe(viewLifecycleOwner) { matchesList ->
+            matchesList?.let { safeState ->
+                when (safeState) {
+                    is MatchesUIState.Error -> {
+                        safeState.exception.printStackTrace()
+                        _binding.srlMatches.isRefreshing = false
+                    }
+
+                    is MatchesUIState.Success<MatchList?> -> {
+                        _binding.rvMatchesCompetition.setHasFixedSize(true)
+                        safeState.data?.let {
+                            _binding.rvMatchesCompetition.adapter =
+                                CompetitionItemAdapter(it) { matchId ->
+                                    val toMatchFragment =
+                                        HomeFragmentDirections.actionHomeFragmentToMatchFragment(
+                                            matchId,
+                                        )
+                                    activity?.findNavController(R.id.main_nav_container)
+                                        ?.navigate(toMatchFragment)
+                                }
+                            val adapter =
+                                _binding.rvMatchesCompetition.adapter as CompetitionItemAdapter
+                            adapter.submitList(
+                                it.matches.toMapperCompetition()?.toList(),
+                            )
+                        }
+                        _binding.srlMatches.isRefreshing = false
+                    }
+                }
+            }
+        }
+        matchesViewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            if (isLoading) {
+                customDialogProgressBar.showProgressDialog()
+            } else {
+                customDialogProgressBar.dismiss()
+            }
+        }
     }
 }

@@ -5,13 +5,18 @@
     <data>
         <variable
             name="match"
-            type="br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.model.Match" />
+            type="br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model.Match" />
+        <variable
+            name="navControler"
+            type="androidx.navigation.NavController" />
     </data>
     <androidx.cardview.widget.CardView
+        android:id="@+id/item_match"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/ItemMatchesStyle"
         android:layout_marginVertical="@dimen/space_10dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         app:cardCornerRadius="@dimen/corner_radius_item_match_card">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

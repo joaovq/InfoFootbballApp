@@ -5,17 +5,17 @@ import java.util.*
 
 data class MatchResponse(
     val id: Long,
-    val area: Area,
-    val competition: Competition,
-    val status: Status?,
-    val stage: Stage?,
-    val season: Season,
-    val score: Score,
-    val group: Group,
+    val area: AreaResponse,
+    val competition: CompetitionResponse,
+    val status: StatusResponse?,
+    val stage: StageResponse?,
+    val season: SeasonResponse,
+    val score: ScoreResponse,
+    val group: GroupResponse,
     @SerializedName("matchday")
     val matchDay: Int,
     @SerializedName("lastUpdated")
     val lastUpdated: Date,
-    val homeTeam: HomeTeam,
-    val awayTeam: AwayTeam
+    val homeTeam: HomeTeamResponse,
+    val awayTeam: AwayTeamResponse
 )

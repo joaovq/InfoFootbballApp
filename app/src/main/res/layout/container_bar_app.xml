@@ -2,20 +2,12 @@
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     app:menu="@menu/home_menu"
     app:navigationIcon="@drawable/ic_arrow_backstack"
-    app:layout_scrollFlags="scroll|enterAlways"
+    app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
     app:layout_collapseMode="pin"
-
     app:elevation="0dp"
     app:titleTextAppearance="@style/TextToolbar"
     app:title="@string/app_name_info_football"
     android:layout_height="wrap_content">
-
-    <androidx.appcompat.widget.SearchView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-         />
 </androidx.appcompat.widget.Toolbar>

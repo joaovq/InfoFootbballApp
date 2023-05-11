@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.FootballApi" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.FootballApi" parent="Theme.Material3.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/color_primary_brand</item>
         <item name="colorPrimaryVariant">@color/color_primary_brand</item>
@@ -9,8 +9,8 @@
         <item name="colorSecondary">@color/color_secondary_brand</item>
         <item name="colorSecondaryVariant">@color/color_secondary_brand</item>
         <item name="colorOnSecondary">@color/color_secondary_brand</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- StatusResponse bar color. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:enforceStatusBarContrast" tools:targetApi="q">true</item>
@@ -62,12 +62,12 @@
         <item name="android:fontFamily">@font/poppins_family</item>
     </style>
     <style name="BottomBarApp" parent="Widget.MaterialComponents.BottomNavigationView">
-        <item name="android:layout_margin">@dimen/space_20dp</item>
+        <item name="android:layout_margin">@dimen/space_14dp</item>
         <item name="android:background">@drawable/bg_bottom_app_bar</item>
         <item name="android:padding">@dimen/space_8dp</item>
         <item name="itemIconTint">@drawable/bottom_item_selector</item>
         <item name="itemIconSize">30dp</item>
-        <item name="itemRippleColor">@null</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/shape_indicator_bg_bottom_bar</item>
         <item name="labelVisibilityMode">unlabeled</item>
     </style>
     <style name="ItemMatchesStyle" parent="Widget.MaterialComponents.CardView">

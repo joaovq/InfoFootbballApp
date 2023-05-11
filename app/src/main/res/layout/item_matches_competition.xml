@@ -4,10 +4,10 @@
         <import type="java.util.List"/>
         <variable
             name="matchList"
-            type="List&lt;br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.model.Match>" />
+            type="List&lt;br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model.Match>" />
         <variable
             name="competition"
-            type="br.com.joaovitorqueiroz.footballapi.ui.matchscreen.data.api.Competition" />
+            type="br.com.joaovitorqueiroz.footballapi.ui.matchscreen.domain.model.Competition" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -29,6 +29,8 @@
             android:id="@+id/tv_competition_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxWidth="@dimen/max_width_name_competition_item_match"
+            android:gravity="center"
             android:textAppearance="@style/TextSubject"
             android:fontFamily="@font/poppins_family"
             android:textAllCaps="true"

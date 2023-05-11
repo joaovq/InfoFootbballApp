@@ -8,10 +8,6 @@
         android:title="@string/title_item_menu_news"
         android:icon="@drawable/ic_news"
         />
-    <item android:id="@id/analyticsFragment"
-        android:title="@string/title_item_menu_analytics"
-        android:icon="@drawable/ic_analytics"
-        />
     <item android:id="@id/profileFragment"
         android:title="@string/title_item_menu_profile"
         android:icon="@drawable/ic_profile"

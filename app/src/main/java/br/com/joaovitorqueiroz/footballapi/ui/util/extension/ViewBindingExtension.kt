@@ -1,4 +1,4 @@
-package br.com.joaovitorqueiroz.footballapi.util.extension
+package br.com.joaovitorqueiroz.footballapi.ui.util.extension
 
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
