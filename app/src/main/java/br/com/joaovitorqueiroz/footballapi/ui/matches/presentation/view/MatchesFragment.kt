@@ -77,12 +77,12 @@ class MatchesFragment : Fragment() {
                                     activity?.findNavController(R.id.main_nav_container)
                                         ?.navigate(toMatchFragment)
                                 }
+                            val adapter =
+                                _binding.rvMatchesCompetition.adapter as CompetitionItemAdapter
+                            adapter.submitList(
+                                it.matches.toMapperCompetition()?.toList(),
+                            )
                         }
-                        val adapter =
-                            _binding.rvMatchesCompetition.adapter as CompetitionItemAdapter
-                        adapter.submitList(
-                            safeState.data?.matches.toMapperCompetition()?.toList(),
-                        )
                         _binding.srlMatches.isRefreshing = false
                     }
                 }

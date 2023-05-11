@@ -79,8 +79,11 @@ class MatchPersonFragment : Fragment() {
                     }
 
                     is TeamViewModel.TeamResultState.Success -> {
-                        _binding.rvSquadTeam.adapter = TeamSquadAdapter()
-                        teamSquadAdapter = _binding.rvSquadTeam.adapter as TeamSquadAdapter
+                        with(_binding.rvSquadTeam) {
+                            setHasFixedSize(true)
+                            adapter = TeamSquadAdapter()
+                            teamSquadAdapter = adapter as TeamSquadAdapter
+                        }
                         safeState.data?.squad?.let { safeListSquad ->
                             teamSquadAdapter.submitList(safeListSquad)
                             _binding.coach = safeState.data.coach
