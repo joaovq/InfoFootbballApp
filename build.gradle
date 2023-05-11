@@ -41,6 +41,9 @@ buildscript {
         circle_image_view_version= "3.1.0"
         hilt_version = "2.45"
         swiperefreshlayout_version = "1.1.0"
+        coroutines_version = "1.6.4"
+        jacoco_version = "0.8.8"
+        test_version_ktx = "1.5.0"
     }
 }
 plugins {
